@@ -3,7 +3,7 @@ package com.example.todoapp.data
 import androidx.room.Database
 import androidx.room.RoomDatabase
 
-// Todo app database
+// Todo_app database
 @Database(
     entities = [Todo::class],
     version = 1
