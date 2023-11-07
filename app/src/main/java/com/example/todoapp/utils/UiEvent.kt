@@ -4,7 +4,7 @@ package com.example.todoapp.utils
 sealed class UiEvent{
     data class ShowSnackBar(
         val message: String,
-        val actionLabel: String
+        val actionLabel: String?
     ): UiEvent()
 
     object PopBackStack: UiEvent()

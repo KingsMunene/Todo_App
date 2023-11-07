@@ -22,10 +22,10 @@ class TodoListViewModel @Inject constructor(
     val todoList = repository.getTodoList()
 
     // Ui events that happen when needed in our application
-    private val _UiEvents = Channel<UiEvent>()
+    private val _uiEvents = Channel<UiEvent>()
 
     // This makes sure that the events are received as hot when needed only
-    val uiEvents = _UiEvents.receiveAsFlow()
+    val uiEvents = _uiEvents.receiveAsFlow()
 
     // A variable to hold the deleted todo incase the user needs to undo the action
     private var deletedTodo: Todo? = null
@@ -67,7 +67,7 @@ class TodoListViewModel @Inject constructor(
 
     private fun sendEvent(event: UiEvent){
         viewModelScope.launch {
-            _UiEvents.send(event)
+            _uiEvents.send(event)
         }
     }
 
